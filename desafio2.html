@@ -1,0 +1,14 @@
+<script>
+
+    let numero = Number(prompt("Informe quantos números deseja adicionar na sequência de Fibonacci: "));
+    let listaNumeros = [0,1];
+
+    for (let contador = 1; contador < numero; contador++) {
+        const ultimo = listaNumeros.slice(-2)
+        listaNumeros.push(ultimo[0] + ultimo[1])
+    }
+    document.write(listaNumeros);
+
+
+
+</script>
