@@ -8,18 +8,32 @@
     */
 
     //ENTRADA
-    const num1 = Number(prompt("Informe o número inicial: "));
-    const num2 = Number(prompt("Informe o número final: "));
-    let numeros = [];
-    
+    let num1 = Number(prompt("Informe o número inicial: "));
+    let num2 = Number(prompt("Informe o número final: "));
+
+    let numPar = [];
+    let numImpar = [];
+
     //PROCESSAMENTO
-    for (num1; num1 <= num2; num1++) {
-        if (num1 > num2) {
-            
+    if (num1 < num2) {
+        for (let contador = num1 + 1; contador <= num2; contador++) {
+
+            if (contador % 2 == 0) {
+                numPar.push(contador)
+
+            } else {
+                numImpar.push(contador)
+            }
         }
+
+        document.write(`Os números pares presentes entre esses dois números é: ${numPar.join(" - ")} <br>`);
+        document.write(`Os números impares presentes entre esses dois números é: ${numImpar.join(" - ")}`);
+
+    } else {
+        document.write(`Erro! O número final tem que ser maior que o número inicial.`)
     }
 
-    
+
     //SAÍDA
 
 </script>
