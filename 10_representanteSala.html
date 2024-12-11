@@ -4,19 +4,40 @@
     PROBLEMA: REPRESENTANTE DE SALA
     Peça para o programa perguntar ao professor regente o nome dos três candidatos a representante da sala.
     Peça também para o programa perguntar ao professor regente a quantidade de alunos votantes.
+
     Desenvolva um programa que armazene o voto de cada aluno da sala e apresente o resultado da votação, com o 
     quantitativo de votos e também a porcentagem de votos de cada candidato a representante de sala.
     */
 
     //ENTRADA
-    const quantidadeDeAlunosVotantes = Number(prompt("Informe a quantidade de alunos votantes: "));
+    const aluno1 = prompt(`Informe o nome do 1° aluno: `);
+    const aluno2 = prompt(`Informe o nome do 2° aluno: `);
+    const aluno3 = prompt(`Informe o nome do 3° aluno: `);
+    const votantes = prompt(`Informe a quantidade de alunos votantes: `);
 
     //PROCESSAMENTO
-    for(let contador = 1; contador >= 3; contador) {
-        const canditato1 = prompt("Informe o nome do" + contador + "° canditado:");
+
+    let opcao1 = 0;
+    let opcao2 = 0;
+    let opcao3 = 0;
+
+    for (let contador = 0; contador < votantes; contador++) {
+        let voto = prompt(`Informe o número do candidato que deseja votar: ${aluno1} (1); ${aluno2} (2); ${aluno3} (3)`);
+
+        if (voto == 1) {
+            opcao1++
+        } else if (voto == 2) {
+            opcao2++
+        } else if (voto == 3) {
+            opcao3++
+        }
     }
 
+    let porcentagem1 = (opcao1 / votantes) * 100;
+    let porcentagem2 = (opcao2 / votantes) * 100;
+    let porcentagem3 = (opcao3 / votantes) * 100;
 
     //SAÍDA
-
+    document.write(`Resultados dos Votos: <br> ${aluno1}: ${opcao1}; <br> ${aluno2}: ${opcao2}; <br> ${aluno3}: ${opcao3}. <br> 
+    Porcentagens: <br> ${porcentagem1}%; <br>  ${porcentagem2}%; <br> ${porcentagem3}%`);
 </script>
